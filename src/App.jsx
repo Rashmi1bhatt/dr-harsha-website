@@ -1,162 +1,94 @@
 import React from "react";
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { motion } from "framer-motion";
-import { Phone, MapPin, Mail } from "lucide-react";
 
-export default function HarshaWebsite() {
-  const kauveryLink = "https://www.kauveryhospitalsbangalore.com/doctors/dr-harsha-narayanamurthy";
-  const apolloLink = "https://www.apolloclinic.com/find-a-doctor/best-neuro-surgeon-in-bengaluru-karnataka/dr-harsha-narayanamurthy";
-
-  const handleClick = (hospital) => {
-    if (window.gtag) {
-      window.gtag("event", "book_appointment_click", {
-        hospital: hospital,
-      });
-    }
-  };
+export default function App() {
+  const kauveryLink =
+    "https://www.kauveryhospitalsbangalore.com/doctors/dr-harsha-narayanamurthy";
+  const apolloLink =
+    "https://www.apolloclinic.com/find-a-doctor/best-neuro-surgeon-in-bengaluru-karnataka/dr-harsha-narayanamurthy";
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div style={{ fontFamily: "Arial", padding: "20px" }}>
+      
       {/* NAVBAR */}
-      <div className="bg-white shadow sticky top-0 z-50">
-        <div className="max-w-6xl mx-auto flex justify-between items-center p-4">
-          <h1 className="font-bold text-lg">Dr Harsha</h1>
-          <div className="space-x-4 text-sm">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#services">Services</a>
-            <a href="#contact">Contact</a>
-          </div>
+      <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "30px" }}>
+        <h2>Dr Harsha</h2>
+        <div>
+          <a href="#home" style={{ marginRight: "15px" }}>Home</a>
+          <a href="#about" style={{ marginRight: "15px" }}>About</a>
+          <a href="#services" style={{ marginRight: "15px" }}>Services</a>
+          <a href="#contact">Contact</a>
         </div>
       </div>
 
-      <div className="max-w-6xl mx-auto p-6 space-y-16">
+      {/* HOME */}
+      <section id="home" style={{ textAlign: "center", marginBottom: "40px" }}>
+        <h1>Dr. Harsha Narayanamurthy</h1>
+        <p>Consultant Neurosurgeon | Brain & Spine Specialist</p>
 
-        {/* LANDING / HOME */}
-        <section id="home" className="text-center space-y-6">
-          <motion.h1
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-4xl font-bold"
+        <div style={{ marginTop: "20px" }}>
+          <button
+            style={{ marginRight: "10px", padding: "10px", background: "black", color: "white", borderRadius: "8px" }}
+            onClick={() => (window.location.href = kauveryLink)}
           >
-            Dr. Harsha Narayanamurthy
-          </motion.h1>
-          <p className="text-lg text-gray-600">
-            Consultant Neurosurgeon | Brain & Spine Specialist in Bangalore
-          </p>
+            Book at Kauvery Hospital
+          </button>
 
-          <div className="flex flex-col md:flex-row justify-center gap-4">
-            <Button
-              onClick={() => {
-                handleClick("kauvery");
-                window.location.href = kauveryLink;
-              }}
-            >
-              Book at Kauvery Hospital
-            </Button>
-            <Button
-              variant="secondary"
-              onClick={() => {
-                handleClick("apollo");
-                window.location.href = apolloLink;
-              }}
-            >
-              Book at Apollo Clinic
-            </Button>
-          </div>
-        </section>
+          <button
+            style={{ padding: "10px", background: "gray", color: "white", borderRadius: "8px" }}
+            onClick={() => (window.location.href = apolloLink)}
+          >
+            Book at Apollo Clinic
+          </button>
+        </div>
+      </section>
 
-        {/* ABOUT */}
-        <section id="about">
-          <Card className="rounded-2xl shadow">
-            <CardContent className="p-6 space-y-4">
-              <h2 className="text-2xl font-semibold">About Dr. Harsha</h2>
-              <p>
-                Dr. Harsha Narayanamurthy is a highly experienced neurosurgeon
-                specializing in brain and spine conditions. He is associated with
-                leading hospitals in Bangalore including Kauvery Hospital and
-                Apollo Clinic.
-              </p>
-              <p>
-                His expertise includes advanced neurosurgical procedures,
-                minimally invasive spine surgery, and management of complex
-                neurological disorders.
-              </p>
-            </CardContent>
-          </Card>
-        </section>
+      {/* ABOUT */}
+      <section id="about" style={{ marginBottom: "40px" }}>
+        <h2>About</h2>
+        <p>
+          Dr. Harsha Narayanamurthy is a leading neurosurgeon in Bangalore,
+          specializing in brain and spine conditions. He is associated with
+          Kauvery Hospital and Apollo Clinic.
+        </p>
+      </section>
 
-        {/* SERVICES */}
-        <section id="services">
-          <Card className="rounded-2xl shadow">
-            <CardContent className="p-6 space-y-4">
-              <h2 className="text-2xl font-semibold">Services & Conditions</h2>
-              <ul className="grid md:grid-cols-2 gap-2 list-disc pl-5">
-                <li>Brain Tumor Surgery</li>
-                <li>Spine Surgery</li>
-                <li>Slip Disc / Sciatica Treatment</li>
-                <li>Head Injury & Trauma</li>
-                <li>Stroke & Neuro Care</li>
-                <li>Minimally Invasive Surgery</li>
-              </ul>
-            </CardContent>
-          </Card>
-        </section>
+      {/* SERVICES */}
+      <section id="services" style={{ marginBottom: "40px" }}>
+        <h2>Services</h2>
+        <ul>
+          <li>Brain Tumor Surgery</li>
+          <li>Spine Surgery</li>
+          <li>Slip Disc Treatment</li>
+          <li>Head Injury & Trauma</li>
+          <li>Stroke Management</li>
+        </ul>
+      </section>
 
-        {/* CONTACT */}
-        <section id="contact">
-          <Card className="rounded-2xl shadow">
-            <CardContent className="p-6 space-y-4">
-              <h2 className="text-2xl font-semibold">Contact</h2>
+      {/* CONTACT */}
+      <section id="contact" style={{ marginBottom: "40px" }}>
+        <h2>Contact</h2>
+        <p>Bangalore, India</p>
 
-              <div className="flex items-center gap-2">
-                <Phone />
-                <span>Appointments via Kauvery Hospital & Apollo Clinic</span>
-              </div>
+        <button
+          style={{ marginRight: "10px", padding: "10px", background: "black", color: "white", borderRadius: "8px" }}
+          onClick={() => (window.location.href = kauveryLink)}
+        >
+          Book via Kauvery
+        </button>
 
-              <div className="flex items-center gap-2">
-                <MapPin />
-                <span>Bangalore, India</span>
-              </div>
-
-              <div className="flex items-center gap-2">
-                <Mail />
-                <span>Optional: add email/contact form here</span>
-              </div>
-
-              <div className="pt-4 flex flex-col md:flex-row gap-4">
-                <Button
-                  className="w-full"
-                  onClick={() => {
-                    handleClick("kauvery");
-                    window.location.href = kauveryLink;
-                  }}
-                >
-                  Book via Kauvery
-                </Button>
-
-                <Button
-                  variant="secondary"
-                  className="w-full"
-                  onClick={() => {
-                    handleClick("apollo");
-                    window.location.href = apolloLink;
-                  }}
-                >
-                  Book via Apollo
-                </Button>
-              </div>
-            </CardContent>
-          </Card>
-        </section>
-
-      </div>
+        <button
+          style={{ padding: "10px", background: "gray", color: "white", borderRadius: "8px" }}
+          onClick={() => (window.location.href = apolloLink)}
+        >
+          Book via Apollo
+        </button>
+      </section>
 
       {/* FOOTER */}
-      <div className="bg-gray-900 text-white text-center p-4 mt-10">
+      <div style={{ textAlign: "center", marginTop: "50px" }}>
         <p>© {new Date().getFullYear()} Dr Harsha Narayanamurthy</p>
       </div>
+
     </div>
   );
 }
