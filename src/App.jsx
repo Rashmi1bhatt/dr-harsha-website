@@ -28,7 +28,12 @@ export default function App() {
         <div style={{ marginTop: "20px" }}>
           <button
             style={{ marginRight: "10px", padding: "10px", background: "black", color: "white", borderRadius: "8px" }}
-            onClick={() => (window.location.href = kauveryLink)}
+            onClick={() => {
+                            window.gtag && window.gtag('event', 'conversion', {
+                              send_to: 'AW-XXXXXXXXX/abc123'
+                            });
+                            window.location.href = kauveryLink;
+                          }}
           >
             Book at Kauvery Hospital
           </button>
@@ -36,11 +41,11 @@ export default function App() {
           <button
             style={{ padding: "10px", background: "gray", color: "white", borderRadius: "8px" }}
             onClick={() => {
-                            window.gtag && window.gtag('event', 'conversion', {
-                              send_to: 'AW-XXXXXXXXX/abc123'
-                            });
-                            window.location.href = kauveryLink;
-                          }}
+              window.gtag && window.gtag('event', 'conversion', {
+                send_to: 'AW-XXXXXXXXX/abc123'
+              });
+              window.location.href = apolloLink;
+            }}
           >
             Book at Apollo Clinic
           </button>
