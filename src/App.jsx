@@ -35,7 +35,12 @@ export default function App() {
 
           <button
             style={{ padding: "10px", background: "gray", color: "white", borderRadius: "8px" }}
-            onClick={() => (window.location.href = apolloLink)}
+            onClick={() => {
+                            window.gtag && window.gtag('event', 'conversion', {
+                              send_to: 'AW-XXXXXXXXX/abc123'
+                            });
+                            window.location.href = kauveryLink;
+                          }}
           >
             Book at Apollo Clinic
           </button>
