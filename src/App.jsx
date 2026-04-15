@@ -2,7 +2,7 @@ import React from "react";
 
 export default function App() {
   const kauveryLink =
-    "https://www.kauveryhospitalsbangalore.com/doctors/dr-harsha-narayanamurthy";
+    "https://www.kauveryhospitalsbangalore.com/book-an-appointment?hospital_ids=1&speciality_ids=4,27,42&doctor_name=Dr.%20Harsha%20Narayanamurthy";
   const apolloLink =
     "https://www.apolloclinic.com/find-a-doctor/best-neuro-surgeon-in-bengaluru-karnataka/dr-harsha-narayanamurthy";
 
