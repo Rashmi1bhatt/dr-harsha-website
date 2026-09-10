@@ -1,0 +1,3 @@
+# Keep the temporary Cloudflare Pages deployment out of search engines.
+/*
+  X-Robots-Tag: noindex
