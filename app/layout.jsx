@@ -56,6 +56,20 @@ export default function RootLayout({ children }) {
     },
     sameAs: ['https://www.kauveryhospitalsbangalore.com/doctors/dr-harsha-narayanamurthy'],
     knowsAbout: ['Brain Surgery', 'Spine Surgery', 'Paediatric Neurosurgery', 'Neuro-Oncology', 'CSF Disorders', 'Neuro-trauma'],
+    hasCredential: [
+      {
+        '@type': 'EducationalOccupationalCredential',
+        name: 'FRCS (Neurosurgery)',
+        credentialCategory: 'professional certification',
+        dateCreated: '2018-10',
+      },
+      {
+        '@type': 'EducationalOccupationalCredential',
+        name: 'Certificate of Completion of Specialist Training (CCT) in Neurosurgery',
+        credentialCategory: 'professional certification',
+        dateCreated: '2019-09',
+      },
+    ],
   };
   return <html lang="en" data-scroll-behavior="smooth"><body>{children}<script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} /></body></html>;
 }
